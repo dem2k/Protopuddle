@@ -7,10 +7,15 @@ import java.awt.*;
  */
 public class Sf {
     private static final float xfactr = 1.5f;
-    public static final String resDir = "/x1dot5";
+    private static final String resDir = "/x1dot5";
     public static final Font font = new Font("Verdana", Font.BOLD, (int) (10 * xfactr));
 
     public static int t(int val) {
         return (int) (val * xfactr);
     }
+
+    public static String dir(String resName) {
+        return resDir + resName;
+    }
+
 }

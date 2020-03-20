@@ -632,30 +632,30 @@ public class GameField extends JPanel implements ActionListener {
     }
 
     public void loadImages() {
-        wall = new ImageIcon(GameField.class.getResource(Sf.resDir+"/wall.png")).getImage();
-        plant = new ImageIcon(GameField.class.getResource(Sf.resDir+"/plant.png")).getImage();
-        meat = new ImageIcon(GameField.class.getResource(Sf.resDir+"/meat.png")).getImage();
-        frame = new ImageIcon(GameField.class.getResource(Sf.resDir+"/frame.png")).getImage();
-        iiliveDarkRedU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveDarkRedU.png"));
-        iiliveDarkRedUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveDarkRedUR.png"));
-        iiliveGreyU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveGreyU.png"));
-        iiliveGreyUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveGreyUR.png"));
-        iiliveRedU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveRedU.png"));
-        iiliveRedUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveRedUR.png"));
-        iiliveYelowU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveYelowU.png"));
-        iiliveYelowUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveYelowUR.png"));
-        iilivePurpleU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/livePurpleU.png"));
-        iilivePurpleUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/livePurpleUR.png"));
-        iiliveOrangeU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveOrangeU.png"));
-        iiliveOrangeUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveOrangeUR.png"));
-        iiliveGreenU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveGreenU.png"));
-        iiliveGreenUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveGreenUR.png"));
-        iiliveBlueU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveBlueU.png"));
-        iiliveBlueUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveBlueUR.png"));
-        iiliveLightBlueU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveLightBlueU.png"));
-        iiliveLightBlueUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveLightBlueUR.png"));
-        iilivePinkU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/livePinkU.png"));
-        iilivePinkUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/livePinkUR.png"));
+        wall = new ImageIcon(GameField.class.getResource(Sf.dir("/wall.png"))).getImage();
+        plant = new ImageIcon(GameField.class.getResource(Sf.dir("/plant.png"))).getImage();
+        meat = new ImageIcon(GameField.class.getResource(Sf.dir("/meat.png"))).getImage();
+        frame = new ImageIcon(GameField.class.getResource(Sf.dir("/frame.png"))).getImage();
+        iiliveDarkRedU = new ImageIcon(GameField.class.getResource(Sf.dir("/liveDarkRedU.png")));
+        iiliveDarkRedUR = new ImageIcon(GameField.class.getResource(Sf.dir("/liveDarkRedUR.png")));
+        iiliveGreyU = new ImageIcon(GameField.class.getResource(Sf.dir("/liveGreyU.png")));
+        iiliveGreyUR = new ImageIcon(GameField.class.getResource(Sf.dir("/liveGreyUR.png")));
+        iiliveRedU = new ImageIcon(GameField.class.getResource(Sf.dir("/liveRedU.png")));
+        iiliveRedUR = new ImageIcon(GameField.class.getResource(Sf.dir("/liveRedUR.png")));
+        iiliveYelowU = new ImageIcon(GameField.class.getResource(Sf.dir("/liveYelowU.png")));
+        iiliveYelowUR = new ImageIcon(GameField.class.getResource(Sf.dir("/liveYelowUR.png")));
+        iilivePurpleU = new ImageIcon(GameField.class.getResource(Sf.dir("/livePurpleU.png")));
+        iilivePurpleUR = new ImageIcon(GameField.class.getResource(Sf.dir("/livePurpleUR.png")));
+        iiliveOrangeU = new ImageIcon(GameField.class.getResource(Sf.dir("/liveOrangeU.png")));
+        iiliveOrangeUR = new ImageIcon(GameField.class.getResource(Sf.dir("/liveOrangeUR.png")));
+        iiliveGreenU = new ImageIcon(GameField.class.getResource(Sf.dir("/liveGreenU.png")));
+        iiliveGreenUR = new ImageIcon(GameField.class.getResource(Sf.dir("/liveGreenUR.png")));
+        iiliveBlueU = new ImageIcon(GameField.class.getResource(Sf.dir("/liveBlueU.png")));
+        iiliveBlueUR = new ImageIcon(GameField.class.getResource(Sf.dir("/liveBlueUR.png")));
+        iiliveLightBlueU = new ImageIcon(GameField.class.getResource(Sf.dir("/liveLightBlueU.png")));
+        iiliveLightBlueUR = new ImageIcon(GameField.class.getResource(Sf.dir("/liveLightBlueUR.png")));
+        iilivePinkU = new ImageIcon(GameField.class.getResource(Sf.dir("/livePinkU.png")));
+        iilivePinkUR = new ImageIcon(GameField.class.getResource(Sf.dir("/livePinkUR.png")));
     }
 
     /* access modifiers changed from: protected */

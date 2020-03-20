@@ -30,6 +30,6 @@ public class MainWindow extends JFrame {
     }
 
     public static void main(String[] args) {
-        new MainWindow().setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindow.class.getResource(Sf.resDir+"/icon.png")));
+        new MainWindow().setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindow.class.getResource(Sf.dir("/icon.png"))));
     }
 }
