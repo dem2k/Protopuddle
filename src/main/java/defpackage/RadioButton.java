@@ -5,11 +5,11 @@ import javax.swing.JRadioButton;
 
 /* renamed from: RadioButton  reason: default package */
 public class RadioButton extends JRadioButton {
-    private int sf=ScreenFactor.factor;
     public RadioButton(String s, int x, int y, int width, int height) {
+        setFont(Sf.font);
         setBackground(Color.BLACK);
         setForeground(Color.WHITE);
-        setBounds(x*sf, y*sf, width*sf, height*sf);
+        setBounds(Sf.t(x),Sf.t( y),Sf.t( width),Sf.t( height));
         setFocusPainted(false);
         setText(s);
     }

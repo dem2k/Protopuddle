@@ -1,25 +1,22 @@
 package defpackage;
 
-import java.awt.Color;
-import java.awt.LayoutManager;
-import javax.swing.JFrame;
-import javax.swing.JProgressBar;
+import java.awt.*;
+import javax.swing.*;
 
 /* renamed from: FrameProgressBar  reason: default package */
 public class FrameProgressBar extends JFrame {
     JProgressBar progressBar = new JProgressBar();
-    private int sf=ScreenFactor.factor;
 
     public FrameProgressBar() {
         setTitle("Progress");
-        setSize(600*sf, 100*sf);
+        setSize(Sf.t(600), Sf.t(100));
         getContentPane().setBackground(Color.BLACK);
-        setLocation(500, 400);
+        setLocation(Sf.t(500), Sf.t(400));
         setResizable(false);
-        setLayout( null);
+        setLayout(null);
         setUndecorated(true);
         setVisible(true);
-        this.progressBar.setBounds(0, 0, 600, 100);
+        this.progressBar.setBounds(Sf.t(0), Sf.t(0), Sf.t(600), Sf.t(100));
         this.progressBar.setBackground(Color.BLACK);
         this.progressBar.setStringPainted(true);
         setAlwaysOnTop(true);

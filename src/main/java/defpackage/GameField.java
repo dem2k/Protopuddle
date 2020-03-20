@@ -632,30 +632,30 @@ public class GameField extends JPanel implements ActionListener {
     }
 
     public void loadImages() {
-        wall = new ImageIcon(GameField.class.getResource("/wall.png")).getImage();
-        plant = new ImageIcon(GameField.class.getResource("/plant.png")).getImage();
-        meat = new ImageIcon(GameField.class.getResource("/meat.png")).getImage();
-        frame = new ImageIcon(GameField.class.getResource("/frame.png")).getImage();
-        iiliveDarkRedU = new ImageIcon(GameField.class.getResource("/liveDarkRedU.png"));
-        iiliveDarkRedUR = new ImageIcon(GameField.class.getResource("/liveDarkRedUR.png"));
-        iiliveGreyU = new ImageIcon(GameField.class.getResource("/liveGreyU.png"));
-        iiliveGreyUR = new ImageIcon(GameField.class.getResource("/liveGreyUR.png"));
-        iiliveRedU = new ImageIcon(GameField.class.getResource("/liveRedU.png"));
-        iiliveRedUR = new ImageIcon(GameField.class.getResource("/liveRedUR.png"));
-        iiliveYelowU = new ImageIcon(GameField.class.getResource("/liveYelowU.png"));
-        iiliveYelowUR = new ImageIcon(GameField.class.getResource("/liveYelowUR.png"));
-        iilivePurpleU = new ImageIcon(GameField.class.getResource("/livePurpleU.png"));
-        iilivePurpleUR = new ImageIcon(GameField.class.getResource("/livePurpleUR.png"));
-        iiliveOrangeU = new ImageIcon(GameField.class.getResource("/liveOrangeU.png"));
-        iiliveOrangeUR = new ImageIcon(GameField.class.getResource("/liveOrangeUR.png"));
-        iiliveGreenU = new ImageIcon(GameField.class.getResource("/liveGreenU.png"));
-        iiliveGreenUR = new ImageIcon(GameField.class.getResource("/liveGreenUR.png"));
-        iiliveBlueU = new ImageIcon(GameField.class.getResource("/liveBlueU.png"));
-        iiliveBlueUR = new ImageIcon(GameField.class.getResource("/liveBlueUR.png"));
-        iiliveLightBlueU = new ImageIcon(GameField.class.getResource("/liveLightBlueU.png"));
-        iiliveLightBlueUR = new ImageIcon(GameField.class.getResource("/liveLightBlueUR.png"));
-        iilivePinkU = new ImageIcon(GameField.class.getResource("/livePinkU.png"));
-        iilivePinkUR = new ImageIcon(GameField.class.getResource("/livePinkUR.png"));
+        wall = new ImageIcon(GameField.class.getResource(Sf.resDir+"/wall.png")).getImage();
+        plant = new ImageIcon(GameField.class.getResource(Sf.resDir+"/plant.png")).getImage();
+        meat = new ImageIcon(GameField.class.getResource(Sf.resDir+"/meat.png")).getImage();
+        frame = new ImageIcon(GameField.class.getResource(Sf.resDir+"/frame.png")).getImage();
+        iiliveDarkRedU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveDarkRedU.png"));
+        iiliveDarkRedUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveDarkRedUR.png"));
+        iiliveGreyU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveGreyU.png"));
+        iiliveGreyUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveGreyUR.png"));
+        iiliveRedU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveRedU.png"));
+        iiliveRedUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveRedUR.png"));
+        iiliveYelowU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveYelowU.png"));
+        iiliveYelowUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveYelowUR.png"));
+        iilivePurpleU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/livePurpleU.png"));
+        iilivePurpleUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/livePurpleUR.png"));
+        iiliveOrangeU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveOrangeU.png"));
+        iiliveOrangeUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveOrangeUR.png"));
+        iiliveGreenU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveGreenU.png"));
+        iiliveGreenUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveGreenUR.png"));
+        iiliveBlueU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveBlueU.png"));
+        iiliveBlueUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveBlueUR.png"));
+        iiliveLightBlueU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveLightBlueU.png"));
+        iiliveLightBlueUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/liveLightBlueUR.png"));
+        iilivePinkU = new ImageIcon(GameField.class.getResource(Sf.resDir+"/livePinkU.png"));
+        iilivePinkUR = new ImageIcon(GameField.class.getResource(Sf.resDir+"/livePinkUR.png"));
     }
 
     /* access modifiers changed from: protected */
@@ -664,21 +664,21 @@ public class GameField extends JPanel implements ActionListener {
         for (int i = 0; i < mapWidth; i++) {
             for (int j = 0; j < mapHeight; j++) {
                 if (map[i][j] == -1) {
-                    g.drawImage(wall, j * 16, i * 16, this);
+                    g.drawImage(wall, j * Sf.t(16), i * Sf.t(16), this);
                 }
                 if (map[i][j] == -3 || map[i][j] == -6) {
-                    g.drawImage(meat, j * 16, i * 16, this);
+                    g.drawImage(meat, j * Sf.t(16), i *Sf.t( 16), this);
                 }
                 if (map[i][j] >= 0) {
-                    cell[map[i][j]].picture.paintIcon(this, g, j * 16, i * 16);
+                    cell[map[i][j]].picture.paintIcon(this, g, j *Sf.t( 16), i *Sf.t( 16));
                 }
                 if (map[i][j] == -2 || map[i][j] == -5) {
-                    g.drawImage(plant, j * 16, i * 16, this);
+                    g.drawImage(plant, j * Sf.t(16), i *Sf.t( 16), this);
                 }
             }
         }
         if (cellForViewGen1 != null && cellForViewGen1.energy > 0) {
-            g.drawImage(frame, (cellForViewGen1.coordX * 16) - 1, (cellForViewGen1.coordY * 16) - 1, this);
+            g.drawImage(frame, (cellForViewGen1.coordX * Sf.t(16)) - 1, (cellForViewGen1.coordY *Sf.t( 16)) - 1, this);
         }
     }
 

@@ -1,23 +1,11 @@
 package defpackage;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.LayoutManager;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-import javax.swing.ButtonGroup;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSlider;
-import javax.swing.JTable;
-import javax.swing.UIManager;
+import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -76,9 +64,8 @@ public class Panel extends JPanel {
     public FileNameExtensionFilter filterCell;
     public FileNameExtensionFilter filterPuddle;
 
-    private int sf=ScreenFactor.factor;
-
     public Panel() {
+        setFont(Sf.font);
         String[] strArr = new String[2];
         strArr[MAX_SPEED] = "pddl";
         strArr[1] = "PDDL";
@@ -88,8 +75,8 @@ public class Panel extends JPanel {
         strArr2[1] = "CLL";
         this.filterCell = new FileNameExtensionFilter("*.cll", strArr2);
         setBackground(Color.BLACK);
-        setPreferredSize(new Dimension(320*sf, 1008*sf));
-        setLayout( null);
+        setPreferredSize(new Dimension(Sf.t(320), Sf.t(1008)));
+        setLayout(null);
         FrameNewPuddle frameNewPuddle = new FrameNewPuddle();
         Button newPuddleBtn = new Button("New Puddle", 5, 10, 100, 30);
         final FrameNewPuddle frameNewPuddle2 = frameNewPuddle;
@@ -105,7 +92,7 @@ public class Panel extends JPanel {
             }
             Panel.fcOpenPuddle = new JFileChooser();
             Panel.fcOpenPuddle.setFileFilter(Panel.this.filterPuddle);
-            if (Panel.fcOpenPuddle.showOpenDialog( null) == 0) {
+            if (Panel.fcOpenPuddle.showOpenDialog(null) == 0) {
                 new ThreadProgressbar().execute();
             }
         });
@@ -148,7 +135,7 @@ public class Panel extends JPanel {
                 Panel.btnPause.setBackground(Color.BLACK);
             }
         });
-        jSlider.setBounds(50*sf, 90*sf, 230*sf, 30*sf);
+        jSlider.setBounds(Sf.t(50), Sf.t(90), Sf.t(230), Sf.t(30));
         add(jSlider);
         add(new Label("Fast", 290, 90, 25, 30));
         btnPause = new Button("Pause", 110, 120, 100, 30);
@@ -163,7 +150,7 @@ public class Panel extends JPanel {
         sliderPlantsSpeed = new JSlider(MAX_SPEED, MAX_SPEED, 10, 5);
         sliderPlantsSpeed.setBackground(Color.BLACK);
         sliderPlantsSpeed.setForeground(Color.WHITE);
-        sliderPlantsSpeed.setBounds(50*sf, 180*sf, 230*sf, 30*sf);
+        sliderPlantsSpeed.setBounds(Sf.t(50), Sf.t(180), Sf.t(230), Sf.t(30));
         add(sliderPlantsSpeed);
         sliderPlantsSpeed.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
@@ -259,24 +246,24 @@ public class Panel extends JPanel {
         add(new Label("Info:", 145, 310, 200, 30));
         labelLiveCount = new Label("Live Cells Count: " + GameField.liveCount, 10, 340, 130, 16);
         add(labelLiveCount);
-        ImageIcon imageIcon = new ImageIcon(GameField.class.getResource("/plant.png"));
+        ImageIcon imageIcon = new ImageIcon(GameField.class.getResource(Sf.resDir + "/plant.png"));
         labelPlantsNumber = new Label(" - " + GameField.plantsCount, 165, 340, 60, 16);
         labelPlantsNumber.setIcon(imageIcon);
         add(labelPlantsNumber);
-        ImageIcon imageIcon2 = new ImageIcon(GameField.class.getResource("/meat.png"));
+        ImageIcon imageIcon2 = new ImageIcon(GameField.class.getResource(Sf.resDir + "/meat.png"));
         labelMeatNumber = new Label(" - 0", 245, 340, 60, 16);
         labelMeatNumber.setIcon(imageIcon2);
         add(labelMeatNumber);
-        iiCol[MAX_SPEED] = new ImageIcon(GameField.class.getResource("/liveDarkRedU.png"));
-        iiCol[1] = new ImageIcon(GameField.class.getResource("/liveGreyU.png"));
-        iiCol[2] = new ImageIcon(GameField.class.getResource("/liveRedU.png"));
-        iiCol[3] = new ImageIcon(GameField.class.getResource("/liveYelowU.png"));
-        iiCol[4] = new ImageIcon(GameField.class.getResource("/livePurpleU.png"));
-        iiCol[5] = new ImageIcon(GameField.class.getResource("/liveOrangeU.png"));
-        iiCol[6] = new ImageIcon(GameField.class.getResource("/liveGreenU.png"));
-        iiCol[7] = new ImageIcon(GameField.class.getResource("/liveBlueU.png"));
-        iiCol[8] = new ImageIcon(GameField.class.getResource("/liveLightBlueU.png"));
-        iiCol[9] = new ImageIcon(GameField.class.getResource("/livePinkU.png"));
+        iiCol[MAX_SPEED] = new ImageIcon(GameField.class.getResource(Sf.resDir + "/liveDarkRedU.png"));
+        iiCol[1] = new ImageIcon(GameField.class.getResource(Sf.resDir + "/liveGreyU.png"));
+        iiCol[2] = new ImageIcon(GameField.class.getResource(Sf.resDir + "/liveRedU.png"));
+        iiCol[3] = new ImageIcon(GameField.class.getResource(Sf.resDir + "/liveYelowU.png"));
+        iiCol[4] = new ImageIcon(GameField.class.getResource(Sf.resDir + "/livePurpleU.png"));
+        iiCol[5] = new ImageIcon(GameField.class.getResource(Sf.resDir + "/liveOrangeU.png"));
+        iiCol[6] = new ImageIcon(GameField.class.getResource(Sf.resDir + "/liveGreenU.png"));
+        iiCol[7] = new ImageIcon(GameField.class.getResource(Sf.resDir + "/liveBlueU.png"));
+        iiCol[8] = new ImageIcon(GameField.class.getResource(Sf.resDir + "/liveLightBlueU.png"));
+        iiCol[9] = new ImageIcon(GameField.class.getResource(Sf.resDir + "/livePinkU.png"));
         labelColorCount[MAX_SPEED] = new Label("", 10, 360, 60, 16);
         add(labelColorCount[MAX_SPEED]);
         labelColorCount[1] = new Label("", 10, 380, 60, 16);
@@ -304,7 +291,7 @@ public class Panel extends JPanel {
         final Button button = btnHideInfo;
         btnHideInfo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (button.getText() == "Hide Info") {
+                if (button.getText().equals("Hide Info")) {
                     button.setText("Show Info");
                     for (int i = Panel.MAX_SPEED; i < 10; i++) {
                         Panel.labelColorCount[i].setIcon((Icon) null);
@@ -382,16 +369,16 @@ public class Panel extends JPanel {
         add(labelSelectedCellEatenPlants);
         labelSelectedCellEatenMeat = new Label("", 10, 675, 310, 15);
         add(labelSelectedCellEatenMeat);
-        ImageIcon imageIcon3 = new ImageIcon(GameField.class.getResource("/wall.png"));
-        iiLiveAnyColorU = new ImageIcon(GameField.class.getResource("/liveAnyColorU.png"));
-        iiarrowUP = new ImageIcon(GameField.class.getResource("/arrowUP.png"));
-        iiarrowRight = new ImageIcon(GameField.class.getResource("/arrowRight.png"));
-        iiarrowLeft = new ImageIcon(GameField.class.getResource("/arrowLeft.png"));
-        iieatPlant = new ImageIcon(GameField.class.getResource("/eatPlant.png"));
-        iieatMeat = new ImageIcon(GameField.class.getResource("/eatMeat.png"));
-        iiknife = new ImageIcon(GameField.class.getResource("/knife.png"));
-        iinoKnife = new ImageIcon(GameField.class.getResource("/noKnife.png"));
-        iipause = new ImageIcon(GameField.class.getResource("/pause.png"));
+        ImageIcon imageIcon3 = new ImageIcon(GameField.class.getResource(Sf.resDir + "/wall.png"));
+        iiLiveAnyColorU = new ImageIcon(GameField.class.getResource(Sf.resDir + "/liveAnyColorU.png"));
+        iiarrowUP = new ImageIcon(GameField.class.getResource(Sf.resDir + "/arrowUP.png"));
+        iiarrowRight = new ImageIcon(GameField.class.getResource(Sf.resDir + "/arrowRight.png"));
+        iiarrowLeft = new ImageIcon(GameField.class.getResource(Sf.resDir + "/arrowLeft.png"));
+        iieatPlant = new ImageIcon(GameField.class.getResource(Sf.resDir + "/eatPlant.png"));
+        iieatMeat = new ImageIcon(GameField.class.getResource(Sf.resDir + "/eatMeat.png"));
+        iiknife = new ImageIcon(GameField.class.getResource(Sf.resDir + "/knife.png"));
+        iinoKnife = new ImageIcon(GameField.class.getResource(Sf.resDir + "/noKnife.png"));
+        iipause = new ImageIcon(GameField.class.getResource(Sf.resDir + "/pause.png"));
         Object[] columnNames = new Object[8];
         columnNames[MAX_SPEED] = "Gen";
         columnNames[1] = "None";
@@ -421,18 +408,18 @@ public class Panel extends JPanel {
         tableGen.setForeground(Color.WHITE);
         tableGen.setGridColor(Color.white);
         tableGen.setBorder(new LineBorder(Color.WHITE));
-        tableGen.setRowHeight(19);
+        tableGen.setRowHeight(Sf.t(19));
         tableGen.getColumnModel().getColumn(MAX_SPEED).setMinWidth(70);
         tableGen.getColumnModel().getColumn(1).setMinWidth(30);
         tableGen.setSelectionBackground(Color.GRAY);
-        tableGen.setSelectionMode(2);
+        tableGen.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         tableGen.setColumnSelectionAllowed(true);
         tableGen.setRowSelectionAllowed(true);
         JTableHeader headerTableGen = tableGen.getTableHeader();
         headerTableGen.setBackground(Color.BLACK);
         headerTableGen.setForeground(Color.WHITE);
         spTableGen = new JScrollPane(tableGen);
-        spTableGen.setBounds(10, 690, 300, 270);
+        spTableGen.setBounds(Sf.t(10), Sf.t(690), Sf.t(300), Sf.t(270));
         spTableGen.setBackground(Color.BLACK);
         spTableGen.getVerticalScrollBar().setBackground(Color.BLACK);
         spTableGen.setVisible(true);
@@ -442,7 +429,7 @@ public class Panel extends JPanel {
         final Button button2 = btnHideTable;
         btnHideTable.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (button2.getText() == "Hide Table") {
+                if (button2.getText().equals("Hide Table")) {
                     button2.setText("Show Table");
                     Panel.spTableGen.setVisible(false);
                     return;

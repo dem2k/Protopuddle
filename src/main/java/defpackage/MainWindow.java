@@ -11,6 +11,7 @@ public class MainWindow extends JFrame {
 
     public MainWindow() {
         setTitle("ProtoPuddle");
+        setFont(Sf.font);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         Dimension sSize = Toolkit.getDefaultToolkit().getScreenSize();
         setSize(sSize);
@@ -29,6 +30,6 @@ public class MainWindow extends JFrame {
     }
 
     public static void main(String[] args) {
-        new MainWindow().setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindow.class.getResource("/icon.png")));
+        new MainWindow().setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindow.class.getResource(Sf.resDir+"/icon.png")));
     }
 }

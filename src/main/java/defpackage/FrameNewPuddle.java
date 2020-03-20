@@ -2,7 +2,6 @@ package defpackage;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -20,11 +19,10 @@ public class FrameNewPuddle extends JFrame {
     public static int plantsSpeedFromSlider = 5;
     public int numberOfLiveCells = 10;
     public int numberOfPlants = 1000;
-    private int sf=ScreenFactor.factor;
 
     public FrameNewPuddle() {
         setTitle("New Puddle");
-        setSize(300*sf, 440*sf);
+        setSize(Sf.t(300),Sf.t( 440));
         getContentPane().setBackground(Color.BLACK);
         setLocation(500, 200);
         setResizable(false);
@@ -275,7 +273,7 @@ public class FrameNewPuddle extends JFrame {
         JSlider jSlider = new JSlider(0, 0, 10, 5);
         jSlider.setBackground(Color.BLACK);
         jSlider.setForeground(Color.WHITE);
-        jSlider.setBounds(170, 310, 100, 25);
+        jSlider.setBounds(Sf.t(170),Sf.t( 310),Sf.t( 100), Sf.t(25));
         jSlider.setMajorTickSpacing(10);
         jSlider.setMinorTickSpacing(0);
         jSlider.setPaintLabels(true);
@@ -289,7 +287,7 @@ public class FrameNewPuddle extends JFrame {
         jButton.setBackground(Color.BLACK);
         jButton.setForeground(Color.WHITE);
         jButton.setBorder(new LineBorder(Color.WHITE));
-        jButton.setBounds(95, 360, 100, 30);
+        jButton.setBounds(Sf.t(95),Sf.t( 360),Sf.t( 100),Sf.t( 30));
         jButton.setFocusPainted(false);
         add(jButton);
         final TextField textField6 = tfNumberOfLiveCells;
