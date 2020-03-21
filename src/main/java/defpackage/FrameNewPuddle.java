@@ -22,7 +22,7 @@ public class FrameNewPuddle extends JFrame {
 
     public FrameNewPuddle() {
         setTitle("New Puddle");
-        setSize(Sf.t(300),Sf.t( 440));
+        setSize(Xf.up(300), Xf.up( 440));
         getContentPane().setBackground(Color.BLACK);
         setLocation(500, 200);
         setResizable(false);
@@ -273,7 +273,7 @@ public class FrameNewPuddle extends JFrame {
         JSlider jSlider = new JSlider(0, 0, 10, 5);
         jSlider.setBackground(Color.BLACK);
         jSlider.setForeground(Color.WHITE);
-        jSlider.setBounds(Sf.t(170),Sf.t( 310),Sf.t( 100), Sf.t(25));
+        jSlider.setBounds(Xf.up(170), Xf.up( 310), Xf.up( 100), Xf.up(25));
         jSlider.setMajorTickSpacing(10);
         jSlider.setMinorTickSpacing(0);
         jSlider.setPaintLabels(true);
@@ -287,7 +287,7 @@ public class FrameNewPuddle extends JFrame {
         jButton.setBackground(Color.BLACK);
         jButton.setForeground(Color.WHITE);
         jButton.setBorder(new LineBorder(Color.WHITE));
-        jButton.setBounds(Sf.t(95),Sf.t( 360),Sf.t( 100),Sf.t( 30));
+        jButton.setBounds(Xf.up(95), Xf.up( 360), Xf.up( 100), Xf.up( 30));
         jButton.setFocusPainted(false);
         add(jButton);
         final TextField textField6 = tfNumberOfLiveCells;

@@ -18,7 +18,7 @@ public class Tabs extends JTabbedPane {
     public static JLabel labelLiveNumber;
 
     public Tabs() {
-        setFont(Sf.font);
+        setFont(Xf.font);
         setBackground(Color.white);
         setPreferredSize(new Dimension(320, 1008));
         JPanel info = new JPanel();

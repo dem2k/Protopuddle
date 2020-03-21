@@ -9,14 +9,14 @@ public class FrameProgressBar extends JFrame {
 
     public FrameProgressBar() {
         setTitle("Progress");
-        setSize(Sf.t(600), Sf.t(100));
+        setSize(Xf.up(600), Xf.up(100));
         getContentPane().setBackground(Color.BLACK);
-        setLocation(Sf.t(500), Sf.t(400));
+        setLocation(Xf.up(500), Xf.up(400));
         setResizable(false);
         setLayout(null);
         setUndecorated(true);
         setVisible(true);
-        this.progressBar.setBounds(Sf.t(0), Sf.t(0), Sf.t(600), Sf.t(100));
+        this.progressBar.setBounds(Xf.up(0), Xf.up(0), Xf.up(600), Xf.up(100));
         this.progressBar.setBackground(Color.BLACK);
         this.progressBar.setStringPainted(true);
         setAlwaysOnTop(true);
